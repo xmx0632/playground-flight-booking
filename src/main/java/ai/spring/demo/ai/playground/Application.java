@@ -65,29 +65,30 @@ public class Application implements AppShellConfigurator {
 	}
 
 	/**
+	 * 没有远程 embedding api可以调用时 mock一个
 	 * mock embeddingModel
 	 * @return
 	 */
-	@Bean
-	public EmbeddingModel embeddingModel() {
-		return new EmbeddingModel(){
-			@Override
-			public EmbeddingResponse call(EmbeddingRequest request) {
-				List<Embedding> list = new ArrayList<>();
-				list.add(new Embedding( new float[0],1));
-				return new EmbeddingResponse(list);
-			}
-
-			@Override
-			public float[] embed(String text) {
-				return new float[]{11,22,33};
-			}
-
-			@Override
-			public float[] embed(Document document) {
-				return new float[]{33,11,44};
-			}
-
-		};
-	}
+//	@Bean
+//	public EmbeddingModel embeddingModel() {
+//		return new EmbeddingModel(){
+//			@Override
+//			public EmbeddingResponse call(EmbeddingRequest request) {
+//				List<Embedding> list = new ArrayList<>();
+//				list.add(new Embedding( new float[0],1));
+//				return new EmbeddingResponse(list);
+//			}
+//
+//			@Override
+//			public float[] embed(String text) {
+//				return new float[]{11,22,33};
+//			}
+//
+//			@Override
+//			public float[] embed(Document document) {
+//				return new float[]{33,11,44};
+//			}
+//
+//		};
+//	}
 }
