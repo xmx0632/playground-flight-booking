@@ -17,7 +17,8 @@
 	<description>Spring AI - Flight Booking Demo</description>
 
 	<properties>
-		<java.version>21</java.version>
+<!--		<java.version>21</java.version>-->
+		<java.version>17</java.version>
 		<vaadin.version>24.4.0.beta3</vaadin.version>
 		<spring-ai.version>1.0.0-SNAPSHOT</spring-ai.version>
 	</properties>
@@ -43,11 +44,16 @@
 
 	<dependencies>
 
-		<!-- OpenAI (Used also for Groq access) -->
 		<dependency>
 			<groupId>org.springframework.ai</groupId>
-			<artifactId>spring-ai-openai-spring-boot-starter</artifactId>
+			<artifactId>spring-ai-ollama-spring-boot-starter</artifactId>
 		</dependency>
+
+		<!-- OpenAI (Used also for Groq access) -->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.ai</groupId>-->
+<!--			<artifactId>spring-ai-openai-spring-boot-starter</artifactId>-->
+<!--		</dependency>-->
 
 		<!-- Standalone Embedding Model. To be used in combination with the Athropic, Groq, Vertex Geminie chat models -->
 		<!-- <dependency>
